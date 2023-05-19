@@ -55,11 +55,11 @@ The idea is to consider the whole configuration of molecules as one big graph an
 
 **Encoder**
 
-![Encoder.png](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Encoder.png)
+![Encoder.png](assets/Encoder.png)
 
 **Decoder**
 
-![Decoder-2.png](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Decoder-2.png)
+![Decoder-2.png](assets/Decoder-2.png)
 
 - First, we apply GNN on each molecule individually so that each atom can have information about the other atoms which are part of the same molecule.
 - Next, we try to coarse grain/compress the graphs of each molecule individually by using pooling layers.
@@ -104,11 +104,11 @@ Now there are multiple ways to add attention to a graph based neural network but
 
 **Encoder**
 
-![Encoder-3.png](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Encoder-3.png)
+![Encoder-3.png](assets/Encoder-3.png)
 
 **Decoder**
 
-![Decoder-1.png](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Decoder-1.png)
+![Decoder-1.png](assets/Decoder-1.png)
 
 # Biasing
 
@@ -123,7 +123,7 @@ Now once we have our latent space, we need to figure out how we can bias our sys
 
 Once we have an effective encoding in latent space it can be assumed that the crystalline state and melt state will be part of two different clusters in latent space, for example, if we consider that our latent space is a **2-D** space, we will have
 
-![Latent.png](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Latent.png)
+![Latent.png](assets/Latent.png)
 
 **Legend**
 
@@ -133,7 +133,7 @@ Once we have an effective encoding in latent space it can be assumed that the cr
 
 now we can use this distance **D** as a CV to be added to the potential function using metadynamics as follows 
 
-![metad_eqn.png](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/metad_eqn.png)
+![metad_eqn.png](assets/metad_eqn.png)
 
 ### 2)  ****Using a **Dense Neural Network** to predict biasing energy
 
@@ -141,7 +141,7 @@ The above-specified method might not work, because the free energy pathway from 
 
 We can overcome this issue by learning a mapping from encoded variables to biasing energy using a simple neural network as shown.
 
-![biasNN.png](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/biasNN.png)
+![biasNN.png](assets/biasNN.png)
 
 **Doubt** → From where will we get biasing energy to train this NN? 
 
@@ -213,7 +213,7 @@ Some other options are
 
 **Paper** - Representation Learning on Graphs: Methods and Applications ([https://arxiv.org/pdf/1709.05584.pdf](https://arxiv.org/pdf/1709.05584.pdf))
 
-![Untitled](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Untitled.png)
+![Untitled](assets/Untitled.png)
 
 ## # Graph Pooling Layers
 
@@ -233,15 +233,15 @@ Rather than applying a simple graph pooling layer to reduce the graph size, we c
 
 **paper**- Self-Attention Graph Pooling - [https://arxiv.org/pdf/1904.08082.pdf](https://arxiv.org/pdf/1904.08082.pdf) 
 
-![Untitled](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Untitled%201.png)
+![Untitled](assets/Untitled%201.png)
 
 The attention mask is obtained by first calculating $Z$ using the formula 
 
-![Untitled](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Untitled%202.png)
+![Untitled](assets/Untitled%202.png)
 
 And then using the top indices of $Z$ for calculating the mask
 
-![Untitled](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Untitled%203.png)
+![Untitled](assets/Untitled%203.png)
 
 The inspiration behind using attention-based pooling layers is that we need to be able to capture the formation of small crystal nuclei and this formation should be reflected in the latent space for effective biasing.
 
@@ -252,7 +252,7 @@ The inspiration behind using attention-based pooling layers is that we need to b
 **Paper-** Graph Pooling for Graph Neural Networks: Progress, Challenges, and
 Opportunities ([https://arxiv.org/pdf/2204.07321.pdf](https://arxiv.org/pdf/2204.07321.pdf))
 
-![Untitled](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Untitled%204.png)
+![Untitled](assets/Untitled%204.png)
 
 ## # Reverse Graph Pooling Layers
 
@@ -307,10 +307,10 @@ This $E$ matrix can be treated as a learnable parameter.
 
 For the loss function, we can use the reconstruction loss given as
 
-![reconLoss.png](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/reconLoss.png)
+![reconLoss.png](assets/reconLoss.png)
 
 ### 2) Reconstruction Loss + KL Divergence
 
 we can also ad KL divergence for regularization into the reconstruction loss
 
-![Untitled](Formal%20statement%20-%20Version%202%20(Naval)%20a554bbc11f494e408a439ef47336485b/Untitled%205.png)
+![Untitled](assets/Untitled%205.png)
