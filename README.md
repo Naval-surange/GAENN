@@ -1,5 +1,19 @@
 # Formal statement - Version 2 (Naval)
 
+## Important Files
+
+**IPYNBs**
+```
+- Latest Stage 1 Auto Enocoder - ./code/intra_molecular_AE_final.ipynb
+- Latest Stage 2 Classifier - ./code/simple-stage-2-classifier.ipynb
+- Latest Stage 2 Auto Enocoder - ./code/simple-stage-2-encoder.ipynb
+```
+
+**Simulation Files**
+```
+inside ./simulation/crystal and ./simulation/melt respectively
+```
+
 ## Statement
 
 Performing metadynamics simulation by using multi-molecular molecular embedding obtained in latent space of **hierarchical graph auto-encoder** as a collective variable.
