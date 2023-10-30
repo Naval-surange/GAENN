@@ -1,4 +1,4 @@
-# Formal statement - Version 2 (Naval)
+# Biasing in Latent Space
 
 ## Important Files
 
